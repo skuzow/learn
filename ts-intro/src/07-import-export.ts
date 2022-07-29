@@ -16,4 +16,3 @@ const [ total, isv ] = calculateISV(shoppingCart);
 
 console.log('Total', total);
 console.log('ISV', isv);
-
