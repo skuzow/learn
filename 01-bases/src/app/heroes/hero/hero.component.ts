@@ -15,7 +15,7 @@ export class HeroComponent {
     }
 
     obtainName(): string {
-        return `${ this.name } - ${ this.age }`
+        return `${ this.name } - ${ this.age }`;
     }
 
     changeName(): void {
