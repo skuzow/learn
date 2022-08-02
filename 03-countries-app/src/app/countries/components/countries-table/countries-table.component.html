@@ -4,6 +4,7 @@
             <th> # </th>
             <th> Flag </th>
             <th> Name </th>
+            <th> Capital </th>
             <th> Population </th>
             <th></th>
         </tr>
@@ -16,6 +17,7 @@
                 [src]="country.flags.svg"
             >
             <th> {{ country.name.common }} </th>
+            <th> {{ country.capital[0] }} </th>
             <th> {{ country.population | number }} </th>
             <th>
                 <a [routerLink]="['/country', country.cca2]">

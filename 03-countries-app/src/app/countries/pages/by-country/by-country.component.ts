@@ -19,7 +19,7 @@ export class ByCountryComponent {
   search(term: string) {
     this.isError = false;
     this.term = term;
-    if (this.term === '') return
+    if (this.term === '') return;
     this.countriesService.searchCountry(this.term)
       .subscribe(countries => {
         this.countries = countries;
