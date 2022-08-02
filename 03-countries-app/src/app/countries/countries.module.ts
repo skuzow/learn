@@ -7,6 +7,8 @@ import { ByCapitalComponent } from './pages/by-capital/by-capital.component';
 import { ByCountryComponent } from './pages/by-country/by-country.component';
 import { ByRegionComponent } from './pages/by-region/by-region.component';
 import { ViewCountryComponent } from './pages/view-country/view-country.component';
+import { CountriesTableComponent } from './components/countries-table/countries-table.component';
+import { CountriesInputComponent } from './components/countries-input/countries-input.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { ViewCountryComponent } from './pages/view-country/view-country.componen
     ByCapitalComponent,
     ByCountryComponent,
     ByRegionComponent,
-    ViewCountryComponent
+    ViewCountryComponent,
+    CountriesTableComponent,
+    CountriesInputComponent
   ],
   exports: [
     ByCapitalComponent,

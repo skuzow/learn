@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 
 import { Country } from '../../interfaces/country.interface';
@@ -16,8 +16,9 @@ export class ByCountryComponent {
 
   constructor(private countriesService: CountriesService) { }
 
-  search() {
+  search(term: string) {
     this.isError = false;
+    this.term = term;
     if (this.term === '') return
     this.countriesService.searchCountry(this.term)
       .subscribe(countries => {
