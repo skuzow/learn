@@ -30,4 +30,9 @@ export class ByCountryComponent {
       });
   }
 
+  suggestions(term: string) {
+    this.isError = false;
+    // TODO: make suggestions
+  }
+
 }
