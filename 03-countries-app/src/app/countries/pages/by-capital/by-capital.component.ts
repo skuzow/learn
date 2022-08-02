@@ -5,7 +5,7 @@ import { CountriesService } from '../../services/countries.service';
 
 @Component({
   selector: 'app-by-capital',
-  templateUrl: './by-capital.component.html',
+  templateUrl: './by-capital.component.html'
 })
 export class ByCapitalComponent {
 

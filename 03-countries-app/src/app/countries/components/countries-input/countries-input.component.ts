@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
 import { debounceTime, Subject } from 'rxjs';
 
 
@@ -10,6 +10,8 @@ export class CountriesInputComponent implements OnInit {
 
   term: string = '';
   debouncer: Subject<string> = new Subject();
+
+  @Input('searchPlaceHolderData') searchPlaceHolder: string = '';
 
   @Output() onEnter: EventEmitter<string> = new EventEmitter;
   @Output() onDebounce: EventEmitter<string> = new EventEmitter; // when user stops writing
