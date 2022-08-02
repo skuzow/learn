@@ -17,7 +17,7 @@
 <div *ngIf="isError" class="alert alert-danger">
     Couldn't found something with {{ term }} term
 </div>
-<div *ngIf="!isError" class="row">
+<div *ngIf="countries.length > 0" class="row">
     <div class="col">
         <table class="table table-hover">
             <thead>
@@ -30,13 +30,20 @@
                 </tr>
             </thead>
             <tbody>
-                <td> 1 </td>
-                <td> flag </td>
-                <td> name </td>
-                <td> 1234567 </td>
-                <td>
-                    <a href="/country/name"> View... </a>
-                </td>
+                <tr *ngFor="let country of countries; let i = index">
+                    <th> {{ i + 1 }} </th>
+                    <img
+                        class="small-flag"
+                        [src]="country.flags.svg"
+                    >
+                    <th> {{ country.name.common }} </th>
+                    <th> {{ country.population | number }} </th>
+                    <th>
+                        <a [routerLink]="['/country', country.cca2]">
+                            View...
+                        </a>
+                    </th>
+                </tr>
             </tbody>
         </table>
     </div>
