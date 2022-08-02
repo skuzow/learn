@@ -9,15 +9,19 @@ import { CountriesService } from '../../services/countries.service';
 export class ByCountryComponent {
 
   term: string = '';
+  isError: boolean = false;
 
   constructor(private countriesService: CountriesService) { }
 
   search() {
+    this.isError = false;
     this.countriesService.searchCountry(this.term)
-      .subscribe(response => {
-        console.log(response);
+      .subscribe(resp => {
+        console.log(resp);
+        this.term = '';
+      }, err => {
+        this.isError = true;
       });
-    this.term = '';
   }
 
 }

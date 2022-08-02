@@ -14,10 +14,10 @@
     </div>
 </div>
 <hr>
-<div class="alert alert-danger">
-    Couldn't found something with provided term
+<div *ngIf="isError" class="alert alert-danger">
+    Couldn't found something with {{ term }} term
 </div>
-<div class="row">
+<div *ngIf="!isError" class="row">
     <div class="col">
         <table class="table table-hover">
             <thead>
