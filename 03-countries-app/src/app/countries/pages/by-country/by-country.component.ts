@@ -6,17 +6,27 @@ import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'app-by-country',
-  templateUrl: './by-country.component.html'
+  templateUrl: './by-country.component.html',
+  styles: [
+    `
+      li {
+        cursor: pointer;
+      }
+    `
+  ]
 })
 export class ByCountryComponent {
 
   term: string = '';
   isError: boolean = false;
+  showSuggestions: boolean = false;
+  suggestedCountries: Country[] = [];
   countries: Country[] = [];
 
   constructor(private countriesService: CountriesService) { }
 
   search(term: string) {
+    this.showSuggestions = false;
     this.isError = false;
     this.term = term;
     if (this.term === '') return;
@@ -32,7 +42,17 @@ export class ByCountryComponent {
 
   suggestions(term: string) {
     this.isError = false;
-    // TODO: make suggestions
+    this.term = term;
+    this.showSuggestions = true;
+    this.countriesService.searchCountry(term)
+      .subscribe(
+        countries => this.suggestedCountries = countries.slice(0, 5),
+        err => this.suggestedCountries = []
+      );
+  }
+
+  searchSuggested(term: string) {
+    this.search(term);
   }
 
 }
