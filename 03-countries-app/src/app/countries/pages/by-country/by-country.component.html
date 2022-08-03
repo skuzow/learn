@@ -1,16 +1,18 @@
-<h2> By Country </h2>
-<hr>
-<div class="row">
-    <div class="col">
-        <app-countries-input 
-            (onEnter)="search($event)"
-            (onDebounce)="suggestions($event)"
-            searchPlaceHolderData="Search Country..."
-        >
-        </app-countries-input>
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h2> By Country </h2>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <app-countries-input 
+                (onEnter)="search($event)"
+                (onDebounce)="suggestions($event)"
+                searchPlaceHolderData="Search Country..."
+            >
+            </app-countries-input>
+        </div>
     </div>
+    <hr>
 </div>
-<hr>
 <div *ngIf="isError" class="alert alert-danger">
     Couldn't found something with {{ term }} term
 </div>
