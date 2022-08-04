@@ -9,12 +9,12 @@ import { MenuComponent } from './menu/menu.component';
   declarations: [
     MenuComponent
   ],
+  exports: [
+    MenuComponent
+  ],
   imports: [
     CommonModule,
     PrimeNgModule
-  ],
-  exports: [
-    MenuComponent
   ]
 })
 export class SharedModule { }
