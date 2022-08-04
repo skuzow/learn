@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
   selector: 'app-sort',
-  templateUrl: './sort.component.html',
-  styles: [
-  ]
+  templateUrl: './sort.component.html'
 })
-export class SortComponent implements OnInit {
+export class SortComponent {
 
-  constructor() { }
+  inMayus: boolean = true;
 
-  ngOnInit(): void {
+  toggleMayus() {
+    this.inMayus = !this.inMayus;
   }
 
 }

@@ -7,13 +7,16 @@ import { UncommonComponent } from './pages/uncommon/uncommon.component';
 import { BasicsComponent } from './pages/basics/basics.component';
 import { SortComponent } from './pages/sort/sort.component';
 
+import { MayusPipe } from './pipes/mayus.pipe';
+
 
 @NgModule({
   declarations: [
     NumbersComponent,
     UncommonComponent,
     BasicsComponent,
-    SortComponent
+    SortComponent,
+    MayusPipe
   ],
   exports: [
     NumbersComponent,

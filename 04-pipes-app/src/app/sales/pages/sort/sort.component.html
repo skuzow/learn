@@ -1,1 +1,27 @@
-<p>sort works!</p>
+<div class="text-layout">
+    <h1> Customized Pipes </h1>
+    <p>
+        Own created pipes :)
+    </p>
+</div>
+<div class="grid">
+
+    <div class="col-4">
+        <p-card
+            header="mayus"
+            subheader="'I Like Macaroni' | mayus:inMayus"
+        >
+        <p>
+            {{ 'I Like Macaroni' | mayus:inMayus }}
+        </p>
+        <button pButton
+            label="Toggle Mayus"
+            icon="pi pi-check"
+            iconPos="right"
+            class="p-button-info"
+            (click)="toggleMayus()"
+        ></button>
+        </p-card>
+    </div>
+
+</div>
