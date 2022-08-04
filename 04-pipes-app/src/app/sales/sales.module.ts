@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 
 import { NumbersComponent } from './pages/numbers/numbers.component';
 import { UncommonComponent } from './pages/uncommon/uncommon.component';
@@ -21,7 +22,8 @@ import { SortComponent } from './pages/sort/sort.component';
     SortComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PrimeNgModule
   ]
 })
 export class SalesModule { }
