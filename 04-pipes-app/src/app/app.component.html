@@ -1,1 +1,19 @@
-<h1> Hello World </h1>
+<div class="text-layout">
+    <h1> {{ name | titlecase }} </h1>
+    <h1> {{ value | number }} </h1>
+    <h1> {{ obj | json }} </h1>
+</div>
+<button
+    pButton
+    label="Print"
+    icon="pi pi-bell"
+    iconPos="right"
+    class="p-button-help"
+    (click)="show()"
+></button>
+<p-card
+    [header]="name | titlecase"
+    subheader="Subheader :)"
+>
+    Body Content
+</p-card>
