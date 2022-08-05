@@ -7,7 +7,10 @@ import { UncommonComponent } from './pages/uncommon/uncommon.component';
 import { BasicsComponent } from './pages/basics/basics.component';
 import { SortComponent } from './pages/sort/sort.component';
 
+import { FlyPipe } from './pipes/fly.pipe';
 import { MayusPipe } from './pipes/mayus.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+import { ColorPipe } from './pipes/color.pipe';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { MayusPipe } from './pipes/mayus.pipe';
     UncommonComponent,
     BasicsComponent,
     SortComponent,
-    MayusPipe
+    FlyPipe,
+    MayusPipe,
+    SortPipe,
+    ColorPipe
   ],
   exports: [
     NumbersComponent,
