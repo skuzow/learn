@@ -58,3 +58,24 @@
         </p-table>
     </div>
 </div>
+<!-- PrimeNG one -->
+<div class="grid">
+    <div class="col mt-2">
+        <p-table [value]="heroes | slice:0">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="name"> Name <p-sortIcon field="name"></p-sortIcon></th>
+                    <th pSortableColumn="fly"> Fly <p-sortIcon field="fly"></p-sortIcon></th>
+                    <th pSortableColumn="color"> Color <p-sortIcon field="color"></p-sortIcon></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-heroe>
+                <tr>
+                    <td> {{ heroe.name }} </td>
+                    <td> {{ heroe.fly | fly | titlecase }} </td>
+                    <td> {{ heroe.color | color | titlecase }} </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
