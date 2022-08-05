@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { BasicsComponent } from './sales/pages/basics/basics.component';
-import { NumbersComponent } from './sales/pages/numbers/numbers.component';
-import { UncommonComponent } from './sales/pages/uncommon/uncommon.component';
-import { SortComponent } from './sales/pages/sort/sort.component';
+import { BasicsComponent } from './cheatsheets/pages/basics/basics.component';
+import { NumbersComponent } from './cheatsheets/pages/numbers/numbers.component';
+import { UncommonComponent } from './cheatsheets/pages/uncommon/uncommon.component';
+import { SortComponent } from './cheatsheets/pages/sort/sort.component';
 
 
 const routes: Routes = [

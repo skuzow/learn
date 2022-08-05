@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { AppRouterModule } from './app-router.module';
 import { SharedModule } from './shared/shared.module';
-import { SalesModule } from './sales/sales.module';
+import { SalesModule } from './cheatsheets/sales.module';
 
 // change app locale
 import localeEn from '@angular/common/locales/en';
