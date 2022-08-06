@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { MaterialModule } from '../material/material.module';
 import { HeroesRoutingModule } from './heroes-routing.module';
 
 import { AddComponent } from './pages/add/add.component';
@@ -20,6 +22,8 @@ import { SeeComponent } from './pages/see/see.component';
   ],
   imports: [
     CommonModule,
+    FlexLayoutModule,
+    MaterialModule,
     HeroesRoutingModule
   ]
 })
