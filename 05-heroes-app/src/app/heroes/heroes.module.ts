@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/list/list.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SeeComponent } from './pages/see/see.component';
+import { HeroCardComponent } from './components/hero-card/hero-card.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SeeComponent } from './pages/see/see.component';
     HomeComponent,
     ListComponent,
     SearchComponent,
-    SeeComponent
+    SeeComponent,
+    HeroCardComponent
   ],
   imports: [
     CommonModule,
