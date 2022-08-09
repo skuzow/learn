@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 
 import { Hero, Publisher } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
+import { ConfirmComponent } from '../../components/confirm/confirm.component';
 
 
 @Component({
@@ -45,7 +47,8 @@ export class AddComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private heroesService: HeroesService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -73,10 +76,19 @@ export class AddComponent implements OnInit {
   }
 
   delete() {
-    this.heroesService.deleteHero(this.hero)
-      .subscribe(() => {
-        this.router.navigate(['/heroes']);
-        this.showSnackbar('Character deleted');
+    const dialog = this.dialog.open(ConfirmComponent, {
+      width: '250px',
+      data: this.hero
+    });
+    dialog.afterClosed()
+      .subscribe(result => {
+        if (result) {
+          this.heroesService.deleteHero(this.hero)
+            .subscribe(() => {
+              this.router.navigate(['/heroes']);
+              this.showSnackbar('Character deleted');
+            });
+        }
       });
   }
 
