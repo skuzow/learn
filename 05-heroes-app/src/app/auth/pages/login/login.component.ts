@@ -18,10 +18,7 @@ export class LoginComponent {
   login() {
     this.authService.login()
       .subscribe(resp => {
-        console.log(resp);
-        if (resp.id) {
-          this.router.navigate(['/heroes']);
-        }
+        if (resp.id) this.router.navigate(['/heroes']);
       });
   }
 
