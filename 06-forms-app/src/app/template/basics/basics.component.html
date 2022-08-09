@@ -53,12 +53,14 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label"> Stock </label>
                 <div class="col-sm-9">
-                    <input
+                    <input required
                         type="number"
                         class="form-control"
                         placeholder="Product stock"
                         ngModel
                         name="stock"
+                        customMin
+                        [min]="0"
                     >
                 </div>
             </div>
@@ -93,6 +95,9 @@
 
         <span> Value </span>
         <pre> {{ myForm.value | json }} </pre>
+
+        <span> CustomDirectives Stock </span>
+        <pre> {{ myForm.controls['stock'].errors | json }} </pre>
 
     </div>
 </div>
