@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from '../../../environments/environment';
 
@@ -11,16 +11,23 @@ import { Hero } from '../interfaces/heroes.interface';
 })
 export class HeroesService {
 
-  private apiUrl: string = environment.apiUrl;
+  private _apiUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(`${this.apiUrl}/heroes`);
+    return this.http.get<Hero[]>(`${this._apiUrl}/heroes`);
   }
 
   getHeroeById(id: string): Observable<Hero> {
-    return this.http.get<Hero>(`${this.apiUrl}/heroes/${id}`);
+    return this.http.get<Hero>(`${this._apiUrl}/heroes/${id}`);
+  }
+
+  getSuggestions(query: string): Observable<Hero[]> {
+    const params = new HttpParams()
+      .set('limit', '6')
+      .set('q', query);
+    return this.http.get<Hero[]>(`${this._apiUrl}/heroes`, {params});
   }
 
 }
