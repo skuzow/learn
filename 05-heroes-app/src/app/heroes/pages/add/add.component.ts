@@ -1,5 +1,5 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 
@@ -44,7 +44,8 @@ export class AddComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private heroesService: HeroesService
+    private heroesService: HeroesService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -61,16 +62,28 @@ export class AddComponent implements OnInit {
     if (this.hero.superhero.trim().length === 0) return;
     if (this.hero.id) {
       this.heroesService.updateHero(this.hero)
-        .subscribe(console.log);
+        .subscribe(() => this.showSnackbar('Character updated'));
     } else {
       this.heroesService.addHero(this.hero)
-        .subscribe(hero => this.router.navigate(['/heroes/edit', hero.id]));
+        .subscribe(hero => {
+          this.router.navigate(['/heroes/edit', hero.id]);
+          this.showSnackbar('Character created');
+        });
     }
   }
 
   delete() {
     this.heroesService.deleteHero(this.hero)
-      .subscribe(() => this.router.navigate(['/heroes']));
+      .subscribe(() => {
+        this.router.navigate(['/heroes']);
+        this.showSnackbar('Character deleted');
+      });
+  }
+
+  showSnackbar(message: string) {
+    this.snackBar.open(message, 'ok!', {
+      duration: 2500
+    })
   }
 
 }
