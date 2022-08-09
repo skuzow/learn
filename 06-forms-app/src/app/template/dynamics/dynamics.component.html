@@ -1,1 +1,102 @@
-<p>dynamics works!</p>
+<h2> Template Dynamics </h2>
+<hr>
+<form #myForm="ngForm"
+    (ngSubmit)="save()"
+    autocomplete="off"
+>
+
+    <!-- Name Field -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Name </label>
+        <div class="col-sm-9">
+            <input required
+                type="text"
+                class="form-control"
+                placeholder="Person name"
+                [ngModel]="person.name"
+                name="name"
+            >
+            <span
+                class="form-text text-danger"
+                *ngIf="isInvalidName()"
+            >
+                This field is required
+            </span>
+        </div>
+    </div>
+
+    <!-- Favorite Field -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Favorite </label>
+        <div class="col-sm-9">
+            <div class="input-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Favorite"
+                    [(ngModel)]="newFavoriteName"
+                    (keyup.enter)="addFavorite()"
+                    name="newFavoriteName"
+                >
+                <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                    (click)="addFavorite()"
+                >
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorite List Field -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Favorite List </label>
+        <div class="col-sm-9">
+            <div
+                class="input-group mb-1"
+                *ngFor="let favorite of person.favorites; let i = index"
+            >
+                <input required
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="favorite.name"
+                    name="favorite_{{ i }}"
+                >
+                <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                    (click)="removeFavorite(i)"
+                >
+                    Remove
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="row mb-3">
+        <div class="col-sm-12">
+            <button
+                type="button"
+                class="btn btn-primary float-end"
+                [disabled]="myForm.invalid"
+                (click)="save()"
+            >
+                Save
+            </button>
+        </div>
+    </div>
+
+</form>
+<div class="row">
+    <div class="col">
+
+        <span> Value </span>
+        <pre> {{ myForm.value | json }} </pre>
+
+        <span> Person </span>
+        <pre> {{ person | json }} </pre>
+
+    </div>
+</div>
