@@ -38,4 +38,8 @@ export class HeroesService {
     return this.http.put<Hero>(`${this._apiUrl}/heroes/${hero.id}`, hero);
   }
 
+  deleteHero(hero: Hero): Observable<any> {
+    return this.http.delete<any>(`${this._apiUrl}/heroes/${hero.id}`);
+  }
+
 }
