@@ -23,7 +23,6 @@ import { ConfirmComponent } from '../../components/confirm/confirm.component';
 })
 export class AddComponent implements OnInit {
 
-  edit: boolean = false;
   publishers = [
     {
       id: 'DC Comics',
@@ -53,7 +52,6 @@ export class AddComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.router.url.includes('edit')) return;
-    this.edit = true;
     this.activatedRoute.params
       .pipe(
         switchMap(({ id }) => this.heroesService.getHeroeById(id))
