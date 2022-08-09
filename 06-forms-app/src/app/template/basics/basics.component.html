@@ -16,7 +16,7 @@
                         minlength="3"
                         class="form-control"
                         placeholder="Product name"
-                        ngModel
+                        [ngModel]="initForm.product"
                         name="product"
                     >
                     <span
@@ -37,7 +37,7 @@
                         min="0"
                         class="form-control"
                         placeholder="Product name"
-                        ngModel
+                        [ngModel]="initForm.price"
                         name="price"
                     >
                     <span
@@ -57,7 +57,7 @@
                         type="number"
                         class="form-control"
                         placeholder="Product stock"
-                        ngModel
+                        [ngModel]="initForm.stock"
                         name="stock"
                         customMin
                         [min]="0"

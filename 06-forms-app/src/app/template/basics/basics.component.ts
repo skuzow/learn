@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 
@@ -6,13 +6,14 @@ import { NgForm } from '@angular/forms';
   selector: 'app-basics',
   templateUrl: './basics.component.html'
 })
-export class BasicsComponent implements OnInit {
+export class BasicsComponent {
 
   @ViewChild('myForm') myForm!: NgForm;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  initForm = {
+    product: 'Something',
+    price: 0,
+    stock: 0
   }
 
   isInvalidName() {
@@ -26,7 +27,8 @@ export class BasicsComponent implements OnInit {
   }
 
   save() {
-    console.log(this.myForm);
+    console.log('Correct post');
+    this.myForm.resetForm(this.initForm);
   }
 
 }
