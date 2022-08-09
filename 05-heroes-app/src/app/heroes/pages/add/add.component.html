@@ -1,1 +1,84 @@
-<p>add works!</p>
+<h1> Add Hero <small> afaf </small></h1>
+<div
+    fxLayout="row"
+    fxLayoutGap="40px"
+    fxLayout.xs="column"
+>
+    <div
+        fxFlex="50"
+        fxLayout="column"
+    >
+
+        <div
+            fxLayout="row"
+            fxLayout.xs="column"
+            fxLayoutGap="20px"
+        >
+            <mat-form-field fxFlex="100">
+                <mat-label> Super Hero </mat-label>
+                <input matInput required
+                    type="text"
+                    [(ngModel)]="hero.superhero"
+                />
+            </mat-form-field>
+            <mat-form-field fxFlex="100">
+                <mat-label> Alter Ego </mat-label>
+                <input matInput required
+                    type="text"
+                    [(ngModel)]="hero.alter_ego"
+                />
+            </mat-form-field>
+        </div>
+
+        <mat-form-field>
+            <mat-label> First Appearance </mat-label>
+            <input matInput required
+                type="text"
+                [(ngModel)]="hero.first_appearance"
+            />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label> Characters </mat-label>
+            <input matInput required
+                type="text"
+                [(ngModel)]="hero.characters"
+            />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label> Creator </mat-label>
+            <mat-select required
+                [(ngModel)]="hero.publisher"
+            >
+                <mat-option
+                    *ngFor="let publisher of publishers"
+                    [value]="publisher.id"
+                >
+                    {{ publisher.desc }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label> Photo Url </mat-label>
+            <input matInput required
+                type="url"
+                [(ngModel)]="hero.alt_img"
+            />
+        </mat-form-field>
+
+        <br>
+        <button mat-raised-button
+            color="primary"
+            (click)="save()"
+        >
+            <mat-icon> edit </mat-icon>
+            Save
+        </button>
+
+    </div>
+    <div fxFlex="50">
+        <img [src]="hero | image">
+    </div>
+</div>
