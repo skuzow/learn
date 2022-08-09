@@ -1,4 +1,13 @@
-<h1> Add Hero <small> afaf </small></h1>
+<h1>
+    <span *ngIf="!edit; else spanEdit"> Add </span>
+    <ng-template #spanEdit> Edit </ng-template>
+    Hero
+    <small>
+        {{ hero.superhero }}
+    </small>
+</h1>
+<mat-divider></mat-divider>
+<br>
 <div
     fxLayout="row"
     fxLayoutGap="40px"
