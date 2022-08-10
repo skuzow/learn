@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -13,5 +14,14 @@ export class SwitchesComponent {
   }
 
   termsConditions: boolean = false;
+
+  @ViewChild('myForm') myForm!: NgForm;
+
+  save() {
+    console.log('Correct post');
+    this.myForm.resetForm({
+      notifications: true
+    });
+  }
 
 }
