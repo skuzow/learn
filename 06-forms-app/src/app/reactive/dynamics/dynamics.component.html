@@ -1,1 +1,86 @@
-<p>dynamics works!</p>
+<h2> Reactive Dynamics </h2>
+<hr>
+<form autocomplete="off">
+
+    <!-- Name Field -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Name </label>
+        <div class="col-sm-9">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Person name"
+            >
+            <span class="form-text text-danger">
+                This field is required
+            </span>
+        </div>
+    </div>
+
+    <!-- Favorite Field -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Favorite </label>
+        <div class="col-sm-9">
+            <div class="input-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Favorite"
+                >
+                <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                >
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorite List Field -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Favorite List </label>
+        <div class="col-sm-9">
+            <!-- <div
+                class="input-group mb-1"
+                *ngFor="let favorite of person.favorites; let i = index"
+            >
+                <input
+                    type="text"
+                    class="form-control"
+                >
+                <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                    (click)="removeFavorite(i)"
+                >
+                    Remove
+                </button>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="row mb-3">
+        <div class="col-sm-12">
+            <button
+                type="button"
+                class="btn btn-primary float-end"
+            >
+                Save
+            </button>
+        </div>
+    </div>
+
+</form>
+<!-- <div class="row">
+    <div class="col">
+
+        <h5> Value </h5>
+        <pre> {{ myForm.value | json }} </pre>
+
+        <h5> Person </h5>
+        <pre> {{ person | json }} </pre>
+
+    </div>
+</div> -->
