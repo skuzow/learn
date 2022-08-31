@@ -1,6 +1,10 @@
 <h2> Reactive Dynamics </h2>
 <hr>
-<form autocomplete="off">
+<form
+    autocomplete="off"
+    [formGroup]="myForm"
+    (ngSubmit)="save()"
+>
 
     <!-- Name Field -->
     <div class="row mb-3">
@@ -10,8 +14,12 @@
                 type="text"
                 class="form-control"
                 placeholder="Person name"
+                formControlName="name"
             >
-            <span class="form-text text-danger">
+            <span
+                class="form-text text-danger"
+                *ngIf="isInvalidField('name')"
+            >
                 This field is required
             </span>
         </div>
@@ -26,10 +34,13 @@
                     type="text"
                     class="form-control"
                     placeholder="Favorite"
+                    [formControl]="newFavorite"
+                    (keyup.enter)="addFavorite()"
                 >
                 <button
                     type="button"
                     class="btn btn-outline-primary"
+                    (click)="addFavorite()"
                 >
                     Add
                 </button>
@@ -40,23 +51,28 @@
     <!-- Favorite List Field -->
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label"> Favorite List </label>
-        <div class="col-sm-9">
-            <!-- <div
+        <div
+            class="col-sm-9"
+            formArrayName="favorites"
+        >
+            <div
                 class="input-group mb-1"
-                *ngFor="let favorite of person.favorites; let i = index"
+                *ngFor="let favorite of favorites.controls; let i = index"
             >
                 <input
                     type="text"
                     class="form-control"
+                    [formControlName]="i"
+                    (keyup.enter)="deleteFavorite(i)"
                 >
                 <button
                     type="button"
                     class="btn btn-outline-danger"
-                    (click)="removeFavorite(i)"
+                    (click)="deleteFavorite(i)"
                 >
                     Remove
                 </button>
-            </div> -->
+            </div>
         </div>
     </div>
 
@@ -64,7 +80,7 @@
     <div class="row mb-3">
         <div class="col-sm-12">
             <button
-                type="button"
+                type="submit"
                 class="btn btn-primary float-end"
             >
                 Save
@@ -73,14 +89,20 @@
     </div>
 
 </form>
-<!-- <div class="row">
+<div class="row">
     <div class="col">
+
+        <h5> Valid </h5>    
+        <pre> {{ myForm.valid }} </pre>
 
         <h5> Value </h5>
         <pre> {{ myForm.value | json }} </pre>
 
-        <h5> Person </h5>
-        <pre> {{ person | json }} </pre>
+        <h5> Add Favorite Valid </h5>
+        <pre> {{ newFavorite.valid }} </pre>
+
+        <h5> Add Favorite Value </h5>
+        <pre> {{ newFavorite.value }} </pre>
 
     </div>
-</div> -->
+</div>
