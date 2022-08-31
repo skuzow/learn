@@ -20,7 +20,7 @@
                     >
                     <span
                         class="form-text text-danger"
-                        *ngIf="isValidField('name')"
+                        *ngIf="isInvalidField('name')"
                     >
                         At least 3 letters
                     </span>
@@ -39,7 +39,7 @@
                     >
                     <span
                         class="form-text text-danger"
-                        *ngIf="isValidField('price')"
+                        *ngIf="isInvalidField('price')"
                     >
                         Price needs to be 0 or higher
                     </span>
@@ -58,7 +58,7 @@
                     >
                     <span
                         class="form-text text-danger"
-                        *ngIf="isValidField('stock')"
+                        *ngIf="isInvalidField('stock')"
                     >
                         Stock needs to be 0 or higher
                     </span>

@@ -31,9 +31,9 @@ export class BasicsComponent implements OnInit {
     })
   }
 
-  isValidField(field: string) {
-    return this.myForm.controls[field].errors
-        && this.myForm.controls[field].touched;
+  isInvalidField(field: string) {
+    return this.myForm.controls[field].touched
+        && this.myForm.controls[field].errors;
   }
 
   save() {
