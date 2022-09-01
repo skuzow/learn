@@ -49,4 +49,19 @@ export class SidemenuComponent {
     }
   ];
 
+  authMenu: MenuItem[] = [
+    {
+      text: 'Basics',
+      route: '/auth/basics'
+    },
+    {
+      text: 'Dynamics',
+      route: '/auth/dynamics'
+    },
+    {
+      text: 'Switches',
+      route: '/auth/switches'
+    }
+  ];
+
 }
