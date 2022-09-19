@@ -51,16 +51,12 @@ export class SidemenuComponent {
 
   authMenu: MenuItem[] = [
     {
-      text: 'Basics',
-      route: '/auth/basics'
+      text: 'Login',
+      route: '/auth/login'
     },
     {
-      text: 'Dynamics',
-      route: '/auth/dynamics'
-    },
-    {
-      text: 'Switches',
-      route: '/auth/switches'
+      text: 'Register',
+      route: '/auth/register'
     }
   ];
 

@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { BasicsComponent } from './basics/basics.component';
-import { DynamicsComponent } from './dynamics/dynamics.component';
-import { SwitchesComponent } from './switches/switches.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 const routes: Routes = [
@@ -11,20 +10,16 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: 'basics',
-        component: BasicsComponent
+        path: 'login',
+        component: LoginComponent
       },
       {
-        path: 'dynamics',
-        component: DynamicsComponent
-      },
-      {
-        path: 'switches',
-        component: SwitchesComponent
+        path: 'register',
+        component: RegisterComponent
       },
       {
         path: '**',
-        redirectTo: 'basics'
+        redirectTo: 'register'
       }
     ]
   }

@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BasicsComponent } from './basics/basics.component';
-import { DynamicsComponent } from './dynamics/dynamics.component';
-import { SwitchesComponent } from './switches/switches.component';
 import { AuthRoutingModule } from './auth-routing.module';
+
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 @NgModule({
   declarations: [
-    BasicsComponent,
-    DynamicsComponent,
-    SwitchesComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
