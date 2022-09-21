@@ -54,7 +54,14 @@
                         type="text"
                         class="form-control"
                         placeholder="Username"
+                        formControlName="username"
                     >
+                    <span
+                        class="form-text text-danger"
+                        *ngIf="isInvalidField('username')"
+                    >
+                        Username can't be skuzow
+                    </span>
                 </div>
             </div>
 
@@ -117,6 +124,9 @@
 
         <h5> Email </h5>
         <pre> {{ myForm.controls['email'].errors | json }} </pre>
+
+        <h5> Username </h5>
+        <pre> {{ myForm.controls['username'].errors | json }} </pre>
 
     </div>
 </div>
