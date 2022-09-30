@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControl, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormControl, ValidationErrors } from '@angular/forms';
 
 
 @Injectable({
@@ -18,6 +18,20 @@ export class ValidatorsService {
       }
     }
     return null;
+  }
+
+  public sameFields(firstField: string, secondField: string) {
+    return (formGroup: AbstractControl): ValidationErrors | null => {
+      const firstFieldText = formGroup.get(firstField)?.value;
+      const secondFieldText = formGroup.get(secondField)?.value;
+      if (firstFieldText !== secondFieldText) {
+        formGroup.get(secondField)?.setErrors({ notEqual: true });
+        return { notEqual: true }
+      }
+      // purge field errors
+      formGroup.get(secondField)?.setErrors(null);
+      return null;
+    }
   }
 
 }

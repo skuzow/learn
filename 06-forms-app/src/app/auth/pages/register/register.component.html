@@ -73,7 +73,14 @@
                         type="password"
                         class="form-control"
                         placeholder="Password"
+                        formControlName="pass"
                     >
+                    <span
+                        class="form-text text-danger"
+                        *ngIf="isInvalidField('pass')"
+                    >
+                        Pass must be higher than 6 characters
+                    </span>
                 </div>
             </div>
 
@@ -85,7 +92,14 @@
                         type="password"
                         class="form-control"
                         placeholder="Confirm Password"
+                        formControlName="confirmpass"
                     >
+                    <span
+                        class="form-text text-danger"
+                        *ngIf="isInvalidField('confirmpass')"
+                    >
+                        Passes must be equal
+                    </span>
                 </div>
             </div>
 
@@ -110,6 +124,9 @@
         <h5> Valid </h5>
         <pre> {{ myForm.valid }} </pre>
 
+        <h5> Errors </h5>
+        <pre> {{ myForm.errors | json }} </pre>
+
         <h5> Pristine </h5>
         <pre> {{ myForm.pristine }} </pre>
 
@@ -127,6 +144,12 @@
 
         <h5> Username </h5>
         <pre> {{ myForm.controls['username'].errors | json }} </pre>
+
+        <h5> Pass </h5>
+        <pre> {{ myForm.controls['pass'].errors | json }} </pre>
+
+        <h5> Confirm pass </h5>
+        <pre> {{ myForm.controls['confirmpass'].errors | json }} </pre>
 
     </div>
 </div>

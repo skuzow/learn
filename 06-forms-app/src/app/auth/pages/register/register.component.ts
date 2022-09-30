@@ -13,7 +13,11 @@ export class RegisterComponent implements OnInit {
   myForm: FormGroup = this.fb.group({
     name: [ '', [ Validators.required, Validators.pattern(this.vs.namePattern) ] ],
     email: [ '', [ Validators.required, Validators.pattern(this.vs.emailPattern) ] ],
-    username: [ '', [ Validators.required, this.vs.cantBeSkuzow ] ]
+    username: [ '', [ Validators.required, this.vs.cantBeSkuzow ] ],
+    pass: [ '', [ Validators.required, Validators.minLength(6) ] ],
+    confirmpass: [ '', [ Validators.required ] ],
+  }, {
+    validators: [ this.vs.sameFields('pass', 'confirmpass') ]
   });
 
   constructor(
