@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { ValidatorsService } from '../../../shared/validators/validators.service';
 
 
 @Component({
@@ -8,28 +10,16 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class RegisterComponent implements OnInit {
 
-  // temp
-  namePattern: string = '([a-zA-Z]+) ([a-zA-Z]+)';
-  emailPattern: string = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'; // Validators.email not rly accurate
-
-  //temp
-  cantBeSkuzow(control: FormControl) {
-    const value = control.value?.trim().toLowerCase();
-    if (value === 'skuzow') {
-      return {
-        noSkuzow: true
-      }
-    }
-    return null;
-  }
-
   myForm: FormGroup = this.fb.group({
-    name: [ '', [ Validators.required, Validators.pattern(this.namePattern) ] ],
-    email: [ '', [ Validators.required, Validators.pattern(this.emailPattern) ] ],
-    username: [ '', [ Validators.required, this.cantBeSkuzow ] ]
+    name: [ '', [ Validators.required, Validators.pattern(this.vs.namePattern) ] ],
+    email: [ '', [ Validators.required, Validators.pattern(this.vs.emailPattern) ] ],
+    username: [ '', [ Validators.required, this.vs.cantBeSkuzow ] ]
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private vs: ValidatorsService
+  ) { }
 
   ngOnInit(): void {
     this.myForm.reset({
