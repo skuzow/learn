@@ -39,9 +39,21 @@
                     >
                     <span
                         class="form-text text-danger"
-                        *ngIf="isInvalidField('email')"
+                        *ngIf="isRequiredField('email')"
                     >
                         Email is required
+                    </span>
+                    <span
+                        class="form-text text-danger"
+                        *ngIf="isEmailFormat()"
+                    >
+                        Value needs to be in email format
+                    </span>
+                    <span
+                        class="form-text text-danger"
+                        *ngIf="isEmailTaken()"
+                    >
+                        Email is already taken
                     </span>
                 </div>
             </div>
@@ -109,6 +121,7 @@
                     <button
                         type="submit"
                         class="btn btn-primary float-end"
+                        [disabled]="myForm.pending"
                     >
                         Save
                     </button>
@@ -123,6 +136,12 @@
 
         <h5> Valid </h5>
         <pre> {{ myForm.valid }} </pre>
+
+        <h5> Status </h5>
+        <pre> {{ myForm.status }} </pre>
+
+        <h5> Pending </h5>
+        <pre> {{ myForm.pending }} </pre>
 
         <h5> Errors </h5>
         <pre> {{ myForm.errors | json }} </pre>
