@@ -21,6 +21,20 @@ export class RegisterComponent implements OnInit {
     validators: [ this.vs.sameFields('pass', 'confirmpass') ]
   });
 
+  get emailErrorMsg(): string {
+    const errors = this.myForm.get('email')?.errors;
+    if (errors?.['required']) {
+      return 'Email is required';
+    }
+    else if (errors?.['pattern']) {
+      return 'Value needs to be in email format';
+    }
+    else if (errors?.['emailTaken']) {
+      return 'Email is already taken';
+    }
+    return '';
+  }
+
   constructor(
     private fb: FormBuilder,
     private vs: ValidatorsService,
@@ -40,21 +54,6 @@ export class RegisterComponent implements OnInit {
   isInvalidField(field: string) {
     return this.myForm.get(field)?.touched
         && this.myForm.get(field)?.invalid;
-  }
-
-  isRequiredField(field: string) {
-    return this.myForm.get(field)?.touched
-        && this.myForm.get(field)?.errors?.['required'];
-  }
-
-  isEmailFormat() {
-    return this.myForm.get('email')?.touched
-        && this.myForm.get('email')?.errors?.['pattern'];
-  }
-
-  isEmailTaken() {
-    return this.myForm.get('email')?.touched
-        && this.myForm.get('email')?.errors?.['emailTaken'];
   }
 
   save() {

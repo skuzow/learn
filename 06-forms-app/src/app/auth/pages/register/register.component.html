@@ -39,21 +39,9 @@
                     >
                     <span
                         class="form-text text-danger"
-                        *ngIf="isRequiredField('email')"
+                        *ngIf="isInvalidField('email')"
                     >
-                        Email is required
-                    </span>
-                    <span
-                        class="form-text text-danger"
-                        *ngIf="isEmailFormat()"
-                    >
-                        Value needs to be in email format
-                    </span>
-                    <span
-                        class="form-text text-danger"
-                        *ngIf="isEmailTaken()"
-                    >
-                        Email is already taken
+                        {{ emailErrorMsg }}
                     </span>
                 </div>
             </div>
