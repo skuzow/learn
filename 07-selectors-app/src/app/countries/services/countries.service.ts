@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { CountrySmall } from '../interfaces/countries.interface';
 })
 export class CountriesService {
 
-  private apiUrl: string = 'https://restcountries.com/v3.1';
+  private _apiUrl: string = 'https://restcountries.com/v3.1';
   private _regions: string[] = [ 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania' ];
   
   get regions(): string[] {
@@ -20,7 +20,9 @@ export class CountriesService {
   constructor(private http: HttpClient) { }
 
   getCountriesbyRegion(region: string): Observable<CountrySmall[]> {
-    return this.http.get<CountrySmall[]>(`${this.apiUrl}/region/${region}?fields=name,cca3`);
+    const url = `${this._apiUrl}/region/${region}`;
+    const httpParams = new HttpParams().set('fields', 'name,cca3');
+    return this.http.get<CountrySmall[]>(url, { params: httpParams });
   }
 
 }
