@@ -2,7 +2,7 @@
 <hr>
 <form [formGroup]="myForm" (ngSubmit)="save()">
 
-    <!-- Region -->
+    <!-- Region selector -->
     <div class="row mb-3">
         <div class="col">
             <label class="form-label"> Continent: </label>
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <!-- Country -->
+    <!-- Country selector -->
     <div class="row mb-3">
         <div class="col">
             <label class="form-label"> Country: </label>
@@ -32,6 +32,22 @@
         </div>
     </div>
 
+    <!-- Frontier selector -->
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label"> Frontier: </label>
+            <select class="form-control"
+                    formControlName="frontier">
+                <option value=""> -- Select frontier country -- </option>
+                <option *ngFor="let frontier of frontiers"
+                        [value]="frontier | lowercase">
+                    {{ frontier }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Select button -->
     <div class="row">
         <div class="col">
             <button class="btn btn-primary float-end"

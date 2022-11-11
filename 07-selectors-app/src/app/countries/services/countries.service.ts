@@ -1,8 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
-import { CountrySmall } from '../interfaces/countries.interface';
+import { CountrySmall, Country } from '../interfaces/countries.interface';
 
 
 @Injectable({
@@ -19,10 +19,17 @@ export class CountriesService {
 
   constructor(private http: HttpClient) { }
 
-  getCountriesbyRegion(region: string): Observable<CountrySmall[]> {
+  getCountriesbyRegion(region: string): Observable<CountrySmall[] | null> {
+    if (!region) return of(null);
     const url = `${this._apiUrl}/region/${region}`;
     const httpParams = new HttpParams().set('fields', 'name,cca3');
     return this.http.get<CountrySmall[]>(url, { params: httpParams });
+  }
+
+  getCountrybyCode(code: string): Observable<Country[] | null> {
+    if (!code) return of(null);
+    const url = `${this._apiUrl}/alpha/${code}`;
+    return this.http.get<Country[]>(url);
   }
 
 }

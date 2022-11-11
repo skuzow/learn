@@ -8,61 +8,144 @@ export interface CountrySmall {
 interface Name {
     common: string;
     official: string;
+}
+
+export interface Country {
+    name: Name;
+    tld: string[];
+    cca2: string;
+    ccn3: string;
+    cca3: string;
+    cioc: string;
+    independent: boolean;
+    status: string;
+    unMember: boolean;
+    currencies: Currencies;
+    idd: Idd;
+    capital: string[];
+    altSpellings: string[];
+    region: string;
+    subregion: string;
+    languages: Languages;
+    translations: Translations;
+    latlng: number[];
+    landlocked: boolean;
+    borders: string[];
+    area: number;
+    demonyms: Demonyms;
+    flag: string;
+    maps: Maps;
+    population: number;
+    gini: Gini;
+    fifa: string;
+    car: Car;
+    timezones: string[];
+    continents: string[];
+    flags: Flags;
+    coatOfArms: Flags;
+    startOfWeek: string;
+    capitalInfo: CapitalInfo;
+    postalCode: PostalCode;
+  }
+  
+interface PostalCode {
+    format: string;
+    regex: string;
+}
+
+interface CapitalInfo {
+    latlng: number[];
+}
+
+interface Flags {
+    png: string;
+    svg: string;
+}
+
+interface Car {
+    signs: string[];
+    side: string;
+}
+
+interface Gini {
+    '2019': number;
+}
+
+interface Maps {
+    googleMaps: string;
+    openStreetMaps: string;
+}
+
+interface Demonyms {
+    eng: Eng;
+    fra: Eng;
+}
+
+interface Eng {
+    f: string;
+    m: string;
+}
+
+interface Translations {
+    ara: Aym;
+    bre: Aym;
+    ces: Aym;
+    cym: Aym;
+    deu: Aym;
+    est: Aym;
+    fin: Aym;
+    fra: Aym;
+    hrv: Aym;
+    hun: Aym;
+    ita: Aym;
+    jpn: Aym;
+    kor: Aym;
+    nld: Aym;
+    per: Aym;
+    pol: Aym;
+    por: Aym;
+    rus: Aym;
+    slk: Aym;
+    spa: Aym;
+    swe: Aym;
+    tur: Aym;
+    urd: Aym;
+    zho: Aym;
+}
+
+interface Languages {
+    aym: string;
+    que: string;
+    spa: string;
+}
+
+interface Idd {
+    root: string;
+    suffixes: string[];
+}
+
+interface Currencies {
+    PEN: PEN;
+}
+
+interface PEN {
+    name: string;
+    symbol: string;
+}
+
+interface Name {
+    common: string;
+    official: string;
     nativeName: NativeName;
 }
 
 interface NativeName {
-    hun?: NativeNameType;
-    hrv?: NativeNameType;
-    dan?: NativeNameType;
-    fao?: NativeNameType;
-    swe?: NativeNameType;
-    spa?: NativeNameType;
-    nld?: NativeNameType;
-    deu?: NativeNameType;
-    bos?: NativeNameType;
-    srp?: NativeNameType;
-    mkd?: NativeNameType;
-    cnr?: NativeNameType;
-    cat?: NativeNameType;
-    ukr?: NativeNameType;
-    fra?: NativeNameType;
-    ltz?: NativeNameType;
-    nno?: NativeNameType;
-    nob?: NativeNameType;
-    smi?: NativeNameType;
-    ron?: NativeNameType;
-    ita?: NativeNameType;
-    eng?: NativeNameType;
-    slv?: NativeNameType;
-    mlt?: NativeNameType;
-    fin?: NativeNameType;
-    sqi?: NativeNameType;
-    gle?: NativeNameType;
-    lat?: NativeNameType;
-    nrf?: NativeNameType;
-    bul?: NativeNameType;
-    pol?: NativeNameType;
-    isl?: NativeNameType;
-    bel?: NativeNameType;
-    rus?: NativeNameType;
-    lav?: NativeNameType;
-    bar?: NativeNameType;
-    est?: NativeNameType;
-    nfr?: NativeNameType;
-    gsw?: NativeNameType;
-    roh?: NativeNameType;
-    por?: NativeNameType;
-    ell?: NativeNameType;
-    tur?: NativeNameType;
-    ces?: NativeNameType;
-    slk?: NativeNameType;
-    glv?: NativeNameType;
-    lit?: NativeNameType;
-    nor?: NativeNameType;
+    aym: Aym;
+    que: Aym;
+    spa: Aym;
 }
 
-interface NativeNameType {
+interface Aym {
     official: string;
     common: string;
 }
