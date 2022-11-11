@@ -18,7 +18,7 @@
     </div>
 
     <!-- Country selector -->
-    <div class="row mb-3">
+    <div class="row mb-3" *ngIf="countries.length !== 0">
         <div class="col">
             <label class="form-label"> Country: </label>
             <select class="form-control"
@@ -33,17 +33,26 @@
     </div>
 
     <!-- Frontier selector -->
-    <div class="row mb-3">
+    <div class="row mb-3" *ngIf="frontiers.length !== 0">
         <div class="col">
             <label class="form-label"> Frontier: </label>
             <select class="form-control"
                     formControlName="frontier">
                 <option value=""> -- Select frontier country -- </option>
                 <option *ngFor="let frontier of frontiers"
-                        [value]="frontier | lowercase">
-                    {{ frontier }}
+                        [value]="frontier.cca3| lowercase">
+                    {{ frontier.name.common }}
                 </option>
             </select>
+        </div>
+    </div>
+
+    <!-- Loading alert -->
+    <div class="row" *ngIf="loading">
+        <div class="col">
+            <div class="alert alert-primary">
+                Loading...
+            </div>
         </div>
     </div>
 

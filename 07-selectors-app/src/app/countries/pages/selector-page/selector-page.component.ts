@@ -20,7 +20,8 @@ export class SelectorPageComponent implements OnInit {
 
   regions: string[] = [];
   countries: CountrySmall[] = [];
-  frontiers: string[] = [];
+  frontiers: CountrySmall[] = [];
+  loading: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -32,24 +33,32 @@ export class SelectorPageComponent implements OnInit {
     // country
     this.myForm.get('region')?.valueChanges
       .pipe(
-        tap(() => this.myForm.get('country')?.reset('')),
+        tap(() => {
+          this.myForm.get('country')?.reset('');
+          this.loading = true;
+        }),
         switchMap(region => this.cs.getCountriesbyRegion(region))
       )
       .subscribe(countries => {
         this.countries = countries || [];
+        this.loading = false;
       });
     // frontier
     this.myForm.get('country')?.valueChanges
       .pipe(
         tap(() => {
-          this.frontiers = [];
           this.myForm.get('frontier')?.reset('');
+          this.loading = true;
         }),
-        switchMap(code => this.cs.getCountrybyCode(code))
+        switchMap(code => this.cs.getCountrybyCode(code)),
+        switchMap(country => {
+          if (!country) return [];
+          return this.cs.getCountriesbyCodes(country[0].borders);
+        })
       )
-      .subscribe(country => {
-        if (country === null) return;
-        this.frontiers = country[0].borders;
+      .subscribe(countries => {
+        this.frontiers = countries;
+        this.loading = false;
       });
   }
 
