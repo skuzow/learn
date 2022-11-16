@@ -67,10 +67,17 @@ export class MarkersComponent implements AfterViewInit {
     this.map.flyTo({ center: marker.getLngLat() });
   }
 
+  removeMarker(i: number) {
+    this.markers[i].marker?.remove();
+    this.markers.splice(i, 1);
+    this._saveMarkers();
+  }
+
   private _generateMarker(center: [ number, number ], color: string) {
     const newMarker = new mapboxgl.Marker({ draggable: true, color })
       .setLngLat(center)
       .addTo(this.map);
+    newMarker.on('dragend', () => this._saveMarkers());
     this.markers.push({ marker: newMarker, color });
   }
 
