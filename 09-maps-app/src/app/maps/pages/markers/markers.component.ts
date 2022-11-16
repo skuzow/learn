@@ -59,10 +59,7 @@ export class MarkersComponent implements AfterViewInit {
   addMarker() {
     // random hexa color code
     const color = "#xxxxxx".replace(/x/g, y => (Math.random()*16|0).toString(16));
-    const newMarker = new mapboxgl.Marker({ draggable: true, color })
-      .setLngLat(this.center)
-      .addTo(this.map);
-    this.markers.push({ marker: newMarker, color });
+    this._generateMarker(this.center, color);
     this._saveMarkers();
   }
 
@@ -70,9 +67,16 @@ export class MarkersComponent implements AfterViewInit {
     this.map.flyTo({ center: marker.getLngLat() });
   }
 
+  private _generateMarker(center: [ number, number ], color: string) {
+    const newMarker = new mapboxgl.Marker({ draggable: true, color })
+      .setLngLat(center)
+      .addTo(this.map);
+    this.markers.push({ marker: newMarker, color });
+  }
+
   private _saveMarkers() {
     const lngLatArr: ColorMarker[] = [];
-    this.markers.forEach(m => {
+    this.markers.map(m => {
       const { lng, lat } = m.marker!.getLngLat();
       lngLatArr.push({ color: m.color, center: [ lng, lat ] });
     });
@@ -83,12 +87,7 @@ export class MarkersComponent implements AfterViewInit {
     const markersLocalStorage: string | null = localStorage.getItem('markers');
     if (!markersLocalStorage) return;
     const lngLatArr: ColorMarker[] = JSON.parse(markersLocalStorage);
-    lngLatArr.forEach(m => {
-      const newMarker = new mapboxgl.Marker({ draggable: true, color: m.color })
-        .setLngLat(m.center!)
-        .addTo(this.map);
-      this.markers.push({ marker: newMarker, color: m.color });
-    });
+    lngLatArr.map(m => this._generateMarker(m.center!, m.color));
   }
 
 }
