@@ -8,7 +8,7 @@ import { ChartData, ChartType, Color } from 'chart.js';
 })
 export class DonaComponent {
 
-  private colors: string[] = [ '#B24EF2', '#5F55E6', '#4E9AF2' ]
+  private colors: string[] = [ '#B24EF2', '#5F55E6', '#4E9AF2' ];
 
   public doughnutChartType: ChartType = 'doughnut';
   public doughnutChartData: ChartData<'doughnut'> = {
@@ -18,6 +18,6 @@ export class DonaComponent {
       { data: [ 50, 150, 120 ], backgroundColor: this.colors },
       { data: [ 250, 130, 70 ], backgroundColor: this.colors }
     ]
-  };
+  }
 
 }
