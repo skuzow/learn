@@ -21,11 +21,21 @@ export class DonaHttpComponent implements OnInit {
   };
 
   public ngOnInit(): void {
+    /* old
     this.gs.getSocialNetworkUsers()
       .subscribe(data => {
         this.doughnutChartData.labels = Object.keys(data);
         this.data.push({
           data: Object.values(data),
+          backgroundColor: this.colors
+        });
+      });
+    */
+    this.gs.getSocialNetworkUsersData()
+      .subscribe(({ labels, values }) => {
+        this.doughnutChartData.labels = labels;
+        this.data.push({
+          data: values,
           backgroundColor: this.colors
         });
       });
