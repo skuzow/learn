@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartType, ChartData, ChartDataset } from 'chart.js';
+import { GraphsService } from '../../services/graphs.service';
 
 
 @Component({
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonaHttpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gs: GraphsService) { }
 
-  ngOnInit(): void {
+  private colors: string[] = [ '#3AB0FA', '#33C9DE', '#44F5D9', '#33DE94', '#3AFA70' ];
+  public data: ChartDataset<"doughnut", number[]>[] = [];
+
+  public doughnutChartType: ChartType = 'doughnut';
+  public doughnutChartData: ChartData<'doughnut'> = {
+    labels: [],
+    datasets: this.data
+  };
+
+  public ngOnInit(): void {
+    this.gs.getSocialNetworkUsers()
+      .subscribe(data => {
+        this.doughnutChartData.labels = Object.keys(data);
+        this.data.push({
+          data: Object.values(data),
+          backgroundColor: this.colors
+        });
+      });
   }
 
 }
