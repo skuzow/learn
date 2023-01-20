@@ -5,7 +5,7 @@ Angular learning projects.
 ## 🗿 [Angular: De cero a experto](https://www.udemy.com/course/angular-fernando-herrera/)
 
 - Section 3: [Ts intro](https://github.com/skuzow/learn/tree/master/front/angular/00-ts-intro)
-- Section 4-5: [Gifs](https://github.com/skuzow/learn/tree/master/front/angular/01-bases)
+- Section 4-5: [Bases](https://github.com/skuzow/learn/tree/master/front/angular/01-bases)
 - Section 7: [Gifs](https://github.com/skuzow/learn/tree/master/front/angular/02-gifs)
 - Section 8-9: [Countries](https://github.com/skuzow/learn/tree/master/front/angular/03-countries)
 - Section 10-11: [Pipes](https://github.com/skuzow/learn/tree/master/front/angular/04-pipes)
