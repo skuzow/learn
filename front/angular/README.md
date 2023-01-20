@@ -2,7 +2,7 @@
 
 Angular learning projects.
 
-## 🗿 [Angular: De cero a experto](https://www.udemy.com/course/angular-fernando-herrera/)
+## 🗿 [Angular: De cero a experto](https://www.udemy.com/course/angular-fernando-herrera)
 
 - Section 3: [Ts intro](https://github.com/skuzow/learn/tree/master/front/angular/00-ts-intro)
 - Section 4-5: [Bases](https://github.com/skuzow/learn/tree/master/front/angular/01-bases)
