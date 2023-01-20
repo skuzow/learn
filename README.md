@@ -1,3 +1,3 @@
-# 🅰️ Angular
+# 📚 Learn
 
-Angular learning sources.
+Learning projects.
