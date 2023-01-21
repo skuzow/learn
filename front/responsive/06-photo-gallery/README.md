@@ -1,3 +1,3 @@
 # 📸 Photo Gallery
 
-CSS flexbox;
+CSS flexbox.
