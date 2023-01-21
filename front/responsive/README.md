@@ -10,3 +10,5 @@ Responsive learning projects (HTML & CSS).
   - Section 1.3: [Markers](https://github.com/skuzow/learn/tree/master/front/responsive/02-markers)
   - Section 1.4: [Registration Form](https://github.com/skuzow/learn/tree/master/front/responsive/03-registration-form)
   - Section 1.5: [Survey Form](https://github.com/skuzow/learn/tree/master/front/responsive/04-survey-form)
+- Section 2:
+  - Section 2.1: [Rothko Painting](https://github.com/skuzow/learn/tree/master/front/responsive/05-rothko-painting)
