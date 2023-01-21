@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Survey Form</title>
+</head>
+<body>
+  <h1 id="title">Survey Form</h1>
+  <p id="description">Tell us something about you</p>
+  <form id="survey-form">
+    <fieldset>
+      <label id="name-label" for="name">Enter your name:
+        <input name="name" id="name" type="text" placeholder="name" required>
+      </label>
+      <label id="email-label" for="email">Enter your email:
+        <input name="email" id="email" type="email" placeholder="email" required>
+      </label>
+      <label id="number-label" for="number">Enter your age:
+        <input name="number" id="number" type="number" max="100" min="1" placeholder="age">
+      </label>
+      <label id="dropdown-label" for="dowpdown">Enter your country:
+        <select name="dropdown" id="dropdown">
+          <option value="">Spain</option>
+          <option value="1">Portugal</option>
+          <option value="2">France</option>
+        </select>
+      </label>
+    </fieldset>
+    <fieldset>
+      <label id="gender-label">Gender:</label>
+      <label id="men-label" for="men">
+        <input name="gender" id="men" type="radio" class="inline" required>Men
+      </label>
+      <label id="women-label" for="women">
+        <input name="gender" id="women" type="radio" class="inline" required>Women
+      </label>
+      <label id="other-label" for="other">
+        <input name="gender" id="other" type="radio" class="inline" required>Other
+      </label>
+    </fieldset>
+    <fieldset>
+      <label id="hobbies-label">Hobbies:</label>
+      <label id="pizza-label" for="pizza">
+        <input name="pizza" id="pizza" type="checkbox" class="inline">I like pizza
+      </label>
+      <label id="games-label" for="games">
+        <input name="games" id="games" type="checkbox" class="inline">I play computer games
+      </label>
+      <label id="doing-label" for="doing">
+        <input name="doing" id="doing" type="checkbox" class="inline">I don't know what i'm doing
+      </label>
+    </fieldset>
+    <fieldset>
+      <label id="textarea-label" for="textarea">Give us a brief description about yourself:
+        <textarea name="textarea" id="textarea" cols="20" rows="6" placeholder="write here..."></textarea>
+      </label>
+    </fieldset>
+    <input id="submit" type="submit" value="Submit">
+  </form>
+</body>
+</html>
