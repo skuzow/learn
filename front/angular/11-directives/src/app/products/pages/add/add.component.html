@@ -10,10 +10,13 @@
                    formControlName="name">
         </div>
         <div class="col-auto">
-            <span class="form-text"
-                  error-msg color="green"
+        <!-- old error-msg modifying attributes
+            <span error-msg color="orange" message="This field is necessary"
+                *ngIf="isInvalid('name')">
+            </span>
+        -->
+            <span error-msg
                   *ngIf="isInvalid('name')">
-                This field is required
             </span>
         </div>
     </div>
