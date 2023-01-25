@@ -21,11 +21,11 @@ export class AddComponent {
   }
 
   changeColor() {
-    this.color = 'green';
+    this.color = "#xxxxxx".replace(/x/g, _ =>(Math.random() * 16 | 0).toString(16));
   }
 
   changeMsg() {
-    this.msg = 'Pepe';
+    this.msg = Math.random().toString();
   }
 
 }

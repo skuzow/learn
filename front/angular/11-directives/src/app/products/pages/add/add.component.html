@@ -10,22 +10,17 @@
                    formControlName="name">
         </div>
         <div class="col-auto">
-        <!-- old error-msg modifying attributes
+            <!-- old error-msg modifying attributes
             <span error-msg color="orange" message="This field is necessary"
-                *ngIf="isInvalid('name')">
+                  *ngIf="isInvalid('name')">
             </span>
-        -->
-            <span error-msg
-                  [color]="color"
-                  [message]="msg"
+            -->
+            <span error-msg [color]="color" [message]="msg"
                   *ngIf="isInvalid('name')">
             </span>
         </div>
     </div>
     <div class="row mt-3">
-        <div class="col">
-            <button class="btn btn-primary">Save</button>
-        </div>
         <div class="col">
             <button class="btn btn-primary"
                     (click)="changeColor()">
