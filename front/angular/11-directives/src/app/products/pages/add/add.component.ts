@@ -16,8 +16,8 @@ export class AddComponent {
 
   constructor(private fb: FormBuilder) { }
 
-  isInvalid(field: string): boolean {
-    return this.myForm.get(field)?.invalid || false;
+  isValid(field: string): boolean {
+    return this.myForm.get(field)?.valid || false;
   }
 
   changeColor() {

@@ -15,8 +15,10 @@
                   *ngIf="isInvalid('name')">
             </span>
             -->
-            <span error-msg [color]="color" [message]="msg"
-                  *ngIf="isInvalid('name')">
+            <span error-msg
+                  [color]="color"
+                  [message]="msg"
+                  [valid]="isValid('name')">
             </span>
         </div>
     </div>
