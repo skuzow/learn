@@ -7,6 +7,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddComponent {
 
+  color: string = 'red';
+  msg: string = 'Alejandro';
+
   myForm: FormGroup = this.fb.group({
     name: ['', Validators.required ]
   });
@@ -15,6 +18,14 @@ export class AddComponent {
 
   isInvalid(field: string): boolean {
     return this.myForm.get(field)?.invalid || false;
+  }
+
+  changeColor() {
+    this.color = 'green';
+  }
+
+  changeMsg() {
+    this.msg = 'Pepe';
   }
 
 }
