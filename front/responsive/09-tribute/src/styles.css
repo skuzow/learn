@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b1b32;
+    font-family: Tahoma;
+    color: white;
+}
+
+h1, div {
+    text-align: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+#img-caption {
+    margin-top: 12px;
+}
+
+#info-div {
+    margin-top: 20px;
+}
+
+a:link, a:visited {
+    color: white;
+}
+
+a:hover, a:active {
+    color: #726b6b;
+}

@@ -15,3 +15,4 @@ Responsive learning projects (HTML & CSS).
   - Section 2.2: [Photo Gallery](https://github.com/skuzow/learn/tree/master/front/responsive/06-photo-gallery)
   - Section 2.3: [Nutrition Label](https://github.com/skuzow/learn/tree/master/front/responsive/07-nutrition-label)
   - Section 2.4: [Quiz](https://github.com/skuzow/learn/tree/master/front/responsive/08-quiz)
+  - Section 2.5: [Tribute](https://github.com/skuzow/learn/tree/master/front/responsive/09-tribute)
