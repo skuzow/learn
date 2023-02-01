@@ -16,3 +16,4 @@ Angular learning projects.
 - Section 21: [Maps](https://github.com/skuzow/learn/tree/master/front/angular/09-maps)
 - Section 22: [Graphs](https://github.com/skuzow/learn/tree/master/front/angular/10-graphs)
 - Section 23: [Directives](https://github.com/skuzow/learn/tree/master/front/angular/11-directives)
+- Section 24-26: [Auth](https://github.com/skuzow/learn/tree/master/front/angular/12-auth)
