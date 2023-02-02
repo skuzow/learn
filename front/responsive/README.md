@@ -18,3 +18,4 @@ Responsive learning projects (HTML & CSS).
   - Section 2.5: [Tribute](https://github.com/skuzow/learn/tree/master/front/responsive/09-tribute)
 - Section 3:
   - Section 2.1: [Balance Sheet](https://github.com/skuzow/learn/tree/master/front/responsive/10-balance-sheet)
+  - Section 2.2: [Picasso Painting](https://github.com/skuzow/learn/tree/master/front/responsive/11-picasso-painting)
