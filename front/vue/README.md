@@ -10,3 +10,4 @@ Vue learning projects.
 ## 🍐 [Vue.js 3 - La Guía Completa - Composition Pinia MEVN 10 Apps](https://www.udemy.com/course/vuejs-la-guia-completa-composition-pinia-mevn-creando-proyectos-reales/)
 
 - Section 2: [Js intro](https://github.com/skuzow/learn/tree/master/front/vue/03-js-intro)
+- Section 3: [GuitarLA](https://github.com/skuzow/learn/tree/master/front/vue/04-guitarla)
