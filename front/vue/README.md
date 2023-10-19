@@ -14,3 +14,4 @@ Vue learning projects.
 - Section 4: [Admin Patients](https://github.com/skuzow/learn/tree/master/front/vue/05-admin-patients)
 - Section 5: [Expense Manager](https://github.com/skuzow/learn/tree/master/front/vue/06-expense-manager)
 - Section 6: [Cryptocurrency Quoter](https://github.com/skuzow/learn/tree/master/front/vue/07-cryptocurrency-quoter)
+- Section 7: [Weather Checker](https://github.com/skuzow/learn/tree/master/front/vue/08-weather-checker)
