@@ -1,0 +1,24 @@
+{
+  "clients": [
+    {
+      "name": "Juan",
+      "surname": "Pepito",
+      "email": "juan@example.com",
+      "phone": "123-123-1234",
+      "company": "Juanito Enterprise",
+      "position": "CEO",
+      "status": true,
+      "id": 1
+    },
+    {
+      "name": "Steve",
+      "surname": "McQueen",
+      "email": "steve@example.com",
+      "phone": "123-123-1234",
+      "company": "Steve Enterprise",
+      "position": "Developer",
+      "status": false,
+      "id": 2
+    }
+  ]
+}
