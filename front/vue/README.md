@@ -16,3 +16,4 @@ Vue learning projects.
 - Section 6: [Cryptocurrency Quoter](https://github.com/skuzow/learn/tree/master/front/vue/07-cryptocurrency-quoter)
 - Section 7: [Weather Checker](https://github.com/skuzow/learn/tree/master/front/vue/08-weather-checker)
 - Section 8: [CRM Clients](https://github.com/skuzow/learn/tree/master/front/vue/09-crm-clients)
+- Section 9: [Drinks Viewer](https://github.com/skuzow/learn/tree/master/front/vue/10-drinks-viewer)
