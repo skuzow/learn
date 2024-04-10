@@ -17,3 +17,4 @@ Vue learning projects.
 - Section 7: [Weather Checker](https://github.com/skuzow/learn/tree/master/front/vue/08-weather-checker)
 - Section 8: [CRM Clients](https://github.com/skuzow/learn/tree/master/front/vue/09-crm-clients)
 - Section 9: [Drinks Viewer](https://github.com/skuzow/learn/tree/master/front/vue/10-drinks-viewer)
+- Section 10-17: [Real Estate](https://github.com/skuzow/learn/tree/master/front/vue/11-real-estate)
