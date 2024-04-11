@@ -8,9 +8,15 @@ dependencies:
   '@mdi/font':
     specifier: ^7.4.47
     version: 7.4.47
+  '@vue-leaflet/vue-leaflet':
+    specifier: ^0.10.1
+    version: 0.10.1(leaflet@1.9.4)
   firebase:
     specifier: ^10.10.0
     version: 10.10.0
+  leaflet:
+    specifier: ^1.9.4
+    version: 1.9.4
   pinia:
     specifier: ^2.1.7
     version: 2.1.7(vue@3.4.21)
@@ -936,6 +942,21 @@ packages:
       vue: 3.4.21
     dev: true
 
+  /@vue-leaflet/vue-leaflet@0.10.1(leaflet@1.9.4):
+    resolution: {integrity: sha512-RNEDk8TbnwrJl8ujdbKgZRFygLCxd0aBcWLQ05q/pGv4+d0jamE3KXQgQBqGAteE1mbQsk3xoNcqqUgaIGfWVg==}
+    peerDependencies:
+      '@types/leaflet': ^1.5.7
+      leaflet: ^1.6.0
+    peerDependenciesMeta:
+      '@types/leaflet':
+        optional: true
+    dependencies:
+      leaflet: 1.9.4
+      vue: 3.4.21
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
   /@vue/compiler-core@3.4.21:
     resolution: {integrity: sha512-MjXawxZf2SbZszLPYxaFCjxfibYrzr3eYbKxwpLR9EQN+oaziSu3qKVbwBERj1IFIB8OLUewxB5m/BFzi613og==}
     dependencies:
@@ -1150,6 +1171,10 @@ packages:
   /is-fullwidth-code-point@3.0.0:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
     engines: {node: '>=8'}
+    dev: false
+
+  /leaflet@1.9.4:
+    resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
     dev: false
 
   /lodash.camelcase@4.3.0:
