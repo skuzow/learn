@@ -22,7 +22,14 @@ const { propertiesCollection, propertyPrice } = useProperties();
         <v-list-item-subtitle>{{ propertyPrice(property.price) }}</v-list-item-subtitle>
 
         <template v-slot:append>
-          <v-btn flat color="info" class="mr-2">Edit</v-btn>
+          <v-btn
+            flat
+            color="info"
+            class="mr-2"
+            :to="{ name: 'edit-property', params: { id: property.id } }"
+          >
+            Edit
+          </v-btn>
           <v-btn flat color="red-darken-3">Delete</v-btn>
         </template>
       </v-list-item>
