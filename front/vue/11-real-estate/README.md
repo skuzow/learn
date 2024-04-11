@@ -1,3 +1,3 @@
 # 🏡 [Real Estate]()
 
-Real Estate app using firebase.
+Real estate app using firebase.

@@ -14,7 +14,7 @@ const submit = handleSubmit(({ email, password }) => auth.login(email, password)
 
 <template>
   <v-card flat max-width="600" class="mx-auto my-10">
-    <v-card-title class="text-h4 font-weight-bold" tag="h3"> Login </v-card-title>
+    <v-card-title class="text-h4 font-weight-bold" tag="h3">Login</v-card-title>
     <v-card-subtitle class="text-h5 pb-1">Login with your account</v-card-subtitle>
 
     <v-alert v-if="auth.hasError" type="error" :title="auth.errorMsg" class="my-5"></v-alert>
