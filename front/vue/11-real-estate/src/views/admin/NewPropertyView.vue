@@ -4,10 +4,13 @@ import { useForm, useField } from 'vee-validate';
 import { useFirestore } from 'vuefire';
 import { collection, addDoc } from 'firebase/firestore';
 import { propertySchema, imageSchema } from '@/validations/propertySchema';
+import useImage from '@/composables/useImage';
 
 const items = [1, 2, 3, 4, 5];
 
 const router = useRouter();
+
+const { uploadImage, imageUrl, url } = useImage();
 
 const db = useFirestore();
 const { handleSubmit } = useForm({
@@ -26,7 +29,10 @@ const swimmingPool = useField('swimmingPool', null, { initialValue: false });
 const submit = handleSubmit(async (values) => {
   const { image, ...property } = values;
 
-  const docRef = await addDoc(collection(db, 'properties'), { property });
+  const docRef = await addDoc(collection(db, 'properties'), {
+    ...property,
+    image: url.value
+  });
 
   if (docRef.id) router.push({ name: 'admin-properties' });
 });
@@ -47,6 +53,7 @@ const submit = handleSubmit(async (values) => {
         v-model="title.value.value"
         :error-messages="title.errorMessage.value"
       />
+
       <v-file-input
         accept="image/jpeg"
         label="Photo"
@@ -54,7 +61,13 @@ const submit = handleSubmit(async (values) => {
         class="mb-5"
         v-model="image.value.value"
         :error-messages="image.errorMessage.value"
+        @change="uploadImage"
       />
+      <div v-if="imageUrl" class="my-5">
+        <p class="font-weight-bold">Property Image:</p>
+        <img :src="imageUrl" class="w-50" />
+      </div>
+
       <v-text-field
         type="number"
         label="Price"
